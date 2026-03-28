@@ -218,7 +218,7 @@ int gm_time_get_system_timezone(char *timezone, const size_t len)
     link[ret] = '\0';
 
     // 获取时区字段起始位置
-    const char *timezone_start = strstr(link, "zoneinfo/");
+    char *timezone_start = strstr(link, "zoneinfo/");
     if (timezone_start == NULL)
     {
         return -4;
@@ -232,8 +232,7 @@ int gm_time_get_system_timezone(char *timezone, const size_t len)
     }
 
     memset(timezone, 0, len);
-    strncpy(timezone, timezone_start, timezone_len);
-    timezone[timezone_len] = '\0';
+    snprintf(timezone, len, "%s", timezone_start);
 
     return 0;
 }

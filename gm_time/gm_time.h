@@ -21,10 +21,10 @@ extern "C"
 
 #define GM_TIME_VERSION_MAJOR 1
 #define GM_TIME_VERSION_MINOR 0
-#define GM_TIME_VERSION_PATCH 0
+#define GM_TIME_VERSION_PATCH 1
 
 // 日期时间结构体
-typedef struct gm_date_time
+typedef struct _gm_date_time_t
 {
     uint16_t tm_year; // 4位年份值(示例: 1995)
     uint8_t tm_mon;   // 取值范围: [1, 12]
